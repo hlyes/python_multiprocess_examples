@@ -1,5 +1,6 @@
 import os
-from multiprocessing import Process
+from multiprocessing import Process, cpu_count
+import signal
 import time
 
 """
@@ -13,18 +14,31 @@ def child_process(name):
     """
     for i in range(5):
         time.sleep(1)
-        print("Hello from process {} with pid {}".format(name, os.getpid()))
+        print("{} with pid {} ---- {}".format(name, os.getpid(), i))
 
 
 if __name__ == "__main__":
-    p = Process(target=child_process, args=["Kid"])
+    processes = [
+        Process(target=child_process, args=["Kid #{}".format(i)])
+        for i in range(cpu_count())
+    ]
 
-    p.start()
+    for p in processes:
+        p.start()
 
-    for i in range(5):
+    for i in range(3):
         time.sleep(1)
         print("Parent process {} says hello".format(os.getpid()))
 
-    p.join()
+    for p in processes:
+        p.terminate()
+        # Does the same as:
+        # os.kill(p.pid, signal.SIGTERM)
+
+    # In case we
+    # for p in processes:
+    #     p.join()
+
+    print("End of father")
 
     exit(0)

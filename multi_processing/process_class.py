@@ -19,7 +19,7 @@ class ChildProcess(Process):
         for i in range(5):
             time.sleep(1)
             print("Hello from process {} with pid {}".format(self.name, self.pid))
-        
+
 
 if __name__ == "__main__":
     p = ChildProcess("Kid")
