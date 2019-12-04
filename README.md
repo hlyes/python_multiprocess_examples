@@ -1,15 +1,30 @@
 # Short remiders on concurrency with Python
+
 This project aim is to provide you with enough information to start with concurrent programming  in python.
 
 
-# The basics
+# Presentation 1
 
- - Processes
+ - Processes 
  - Threads
+ - Pools
+ - Asyncio Coroutines
+
+# Presentation 2
+
  - IPC (Inter process communications) Notions
-  - Queus
+  - Queues
   - Pipes & Files
   - Shared Memory
   - Signals
+
+# Presentation 3
+
 - Synchronization mecanisms (parallel programming management)
- 
+- Locks
+- Semaphores
+- Barriers
+
+# Presentation 4
+
+TBD

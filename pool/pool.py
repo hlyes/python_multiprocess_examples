@@ -35,7 +35,8 @@ def handler_multi_params(name, age):
 
 
 if __name__ == "__main__":
-    p = Pool(processes=cpu_count())
+    
+    p = Pool(processes=4)
 
     # p.map(handler,[ "Kid #{}".format(i) for i in range(cpu_count())])
     p.starmap(

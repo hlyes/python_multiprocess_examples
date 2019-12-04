@@ -11,7 +11,7 @@ def thread_handler(name, value_new):
     """ A simple thread handler """
     if with_global:
         """ the  keyword global must be set """
-        global value
+        #global value
     time.sleep(10)
     value = value_new
     print(

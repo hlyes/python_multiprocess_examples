@@ -18,6 +18,7 @@ def child_process(name):
 
 
 if __name__ == "__main__":
+    
     processes = [
         Process(target=child_process, args=["Kid #{}".format(i)])
         for i in range(cpu_count())
@@ -30,6 +31,7 @@ if __name__ == "__main__":
         time.sleep(1)
         print("Parent process {} says hello".format(os.getpid()))
 
+    
     for p in processes:
         p.terminate()
         # Does the same as:
