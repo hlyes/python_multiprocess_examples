@@ -13,10 +13,10 @@ This project aim is to provide you with enough information to start with concurr
 # Presentation 2
 
  - IPC (Inter process communications) Notions
-  - Queues
-  - Pipes & Files
-  - Shared Memory
-  - Signals
+    - Queues
+    - Pipes
+    - Shared Memory
+    - Signals
 
 # Presentation 3
 
