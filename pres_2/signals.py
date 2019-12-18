@@ -26,9 +26,7 @@ if __name__ == '__main__':
     signal.signal(signal.SIGINT, sigint_handler)
     children = []
 
-
-
-    while received_sigints < NB_PROCS:
+    while True:
         print("Waiting")
         time.sleep(1)
 
