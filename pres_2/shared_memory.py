@@ -21,6 +21,7 @@ def pool_worker(i, finished, res):
 
 if __name__ == '__main__':
     print("{} start workers ...".format(os.getpid()))
+    
     results_array = Array("i", range(NB_PROCS))
     finished_calculations = Value("d", 0)
 
@@ -34,9 +35,10 @@ if __name__ == '__main__':
         c.start()
 
     while finished_calculations.value < NB_PROCS:
-        print ("Waiting")
+        print ("Waiting", finished_calculations.value)
         time.sleep(1)
 
     for c in children:
         c.join()
+    
     exit(0)

@@ -10,10 +10,11 @@ NB_PROCS = 4
 
 
 def pool_worker(q):
-    time.sleep(randint(0, 5))
+    time.sleep(randint(1, 5))
     computed = randint(0, 1000)
     print("{} computed {}".format(os.getpid(), computed))
     q.put((computed, os.getpid()))
+
 
 
 if __name__ == '__main__':
@@ -27,9 +28,9 @@ if __name__ == '__main__':
 
     for c in children:
         c.start()
-
+    
     for i in range(NB_PROCS):
-        data = queue.get(block=True, timeout=1)
+        data = queue.get(block=True)
         print("{} received {}".format(os.getpid(), data))
 
 
@@ -37,7 +38,5 @@ if __name__ == '__main__':
 
     for c in children:
         c.join()
+
     exit(0)
-
-
-

@@ -4,7 +4,7 @@ import time
 import  signal
 
 
-NB_PROCS = 4
+SIGNALS = 4
 
 received_sigints = 0
 
@@ -12,16 +12,19 @@ received_sigints = 0
 # In this example the queues that exist are FIFO, we can also use ProritizedQueues and LIFO queues
 
 def sigint_handler(signal, frame):
+    
     print("Signal received", signal,frame)
+    
     frame.f_globals["received_sigints"]+=1
-    if frame.f_globals["received_sigints"] > 4:
+    
+    if frame.f_globals["received_sigints"] > SIGNALS:
         exit(0)
 
 
 
 if __name__ == '__main__':
     print("{} start workers ...".format(os.getpid()))
-    finished_processes = [] * NB_PROCS
+    finished_processes = [] * SIGNALS
 
     signal.signal(signal.SIGINT, sigint_handler)
     children = []
