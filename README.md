@@ -21,10 +21,7 @@ This project aim is to provide you with enough information to start with concurr
 
 # Presentation 3
 - Locks
-- Reentrant Locks (RLock)
+    - Reentrant Locks (RLock)
 - Semaphores
 - Barriers
 
-# Presentation 4
-
-TBD
