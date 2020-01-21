@@ -20,9 +20,8 @@ This project aim is to provide you with enough information to start with concurr
     
 
 # Presentation 3
-
-- Synchronization mecanisms (parallel programming management)
 - Locks
+- Reentrant Locks (RLock)
 - Semaphores
 - Barriers
 
